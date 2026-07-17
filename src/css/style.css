@@ -156,6 +156,54 @@ button {
   padding: 1rem;
 }
 
+.categories {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.categories h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: var(--dark-grey);
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.category-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.75rem;
+}
+
+.category-card h3 {
+  font-size: 1rem;
+}
+
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -249,6 +297,10 @@ button {
 
   .mission {
     font-size: 1.2em;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .cart-card {

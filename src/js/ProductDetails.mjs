@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage } from './utils.mjs';
 
 export default class ProductDetails {
   constructor(productId, dataSource) {
@@ -9,7 +9,7 @@ export default class ProductDetails {
 
   async init() {
     if (!this.productId) {
-      throw new Error("Product ID is required to load product details.");
+      throw new Error('Product ID is required to load product details.');
     }
 
     this.product = await this.dataSource.findProductById(this.productId);
@@ -18,45 +18,47 @@ export default class ProductDetails {
     }
 
     this.renderProductDetails();
-    const addToCartButton = document.getElementById("addToCart");
+    const addToCartButton = document.getElementById('addToCart');
     if (addToCartButton) {
       addToCartButton.addEventListener(
-        "click",
+        'click',
         this.addProductToCart.bind(this),
       );
     }
   }
 
   addProductToCart() {
-    const cartItems = getLocalStorage("so-cart") || [];
+    const cartItems = getLocalStorage('so-cart') || [];
     cartItems.push(this.product);
-    setLocalStorage("so-cart", cartItems);
+    setLocalStorage('so-cart', cartItems);
   }
 
   renderProductDetails() {
-    const productDetail = document.querySelector(".product-detail");
+    const productDetail = document.querySelector('.product-detail');
     if (!productDetail) {
-      throw new Error("Unable to find product detail container in the page.");
+      throw new Error('Unable to find product detail container in the page.');
     }
 
     const {
       Brand,
       NameWithoutBrand,
-      Image,
+      Images,
       FinalPrice,
       Colors,
       DescriptionHtmlSimple,
       Id,
     } = this.product;
-    const brandName = Brand?.Name || Brand?.Name || "";
-    const colorName = Colors?.[0]?.ColorName || "";
+    const brandName = Brand?.Name || '';
+    const colorName = Colors?.[0]?.ColorName || '';
     const price =
-      typeof FinalPrice === "number" ? `$${FinalPrice.toFixed(2)}` : "";
+      typeof FinalPrice === 'number' ? `$${FinalPrice.toFixed(2)}` : '';
+    const imageSrc =
+      Images?.PrimaryLarge || Images?.PrimaryMedium || this.product.Image || '';
 
     productDetail.innerHTML = `
       <h3>${brandName}</h3>
       <h2 class="divider">${NameWithoutBrand}</h2>
-      <img class="divider" src="${Image}" alt="${brandName} ${NameWithoutBrand}" />
+      <img class="divider" src="${imageSrc}" alt="${brandName} ${NameWithoutBrand}" />
       <p class="product-card__price">${price}</p>
       <p class="product__color">${colorName}</p>
       <p class="product__description">${DescriptionHtmlSimple}</p>
