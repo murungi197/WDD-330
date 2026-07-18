@@ -46,3 +46,49 @@ export function renderListWithTemplate(
   const htmlStrings = list.map(templateFn);
   parentElement.insertAdjacentHTML(position, htmlStrings.join(''));
 }
+
+export function renderWithTemplate(template, parentElement, data, callback) {
+  if (!parentElement) {
+    throw new Error('Parent element is required to render a template.');
+  }
+
+  parentElement.innerHTML = template;
+
+  if (callback) {
+    callback(data);
+  }
+}
+
+export async function loadTemplate(path) {
+  const res = await fetch(path);
+  if (!res.ok) {
+    throw new Error(`Failed to load template: ${path}`);
+  }
+  const template = await res.text();
+  return template;
+}
+
+export async function loadHeaderFooter() {
+  const headerTemplate = await loadTemplate('/partials/header.html');
+  const footerTemplate = await loadTemplate('/partials/footer.html');
+
+  const headerElement = document.querySelector('#main-header');
+  const footerElement = document.querySelector('#main-footer');
+
+  if (headerElement) {
+    renderWithTemplate(headerTemplate, headerElement);
+    updateCartBadge();
+  }
+
+  if (footerElement) {
+    renderWithTemplate(footerTemplate, footerElement);
+  }
+}
+
+export function updateCartBadge() {
+  const cartItems = getLocalStorage('so-cart') || [];
+  const cartBadge = document.getElementById('cart-count');
+  if (cartBadge) {
+    cartBadge.textContent = cartItems.length > 0 ? cartItems.length : '';
+  }
+}
