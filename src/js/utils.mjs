@@ -77,9 +77,18 @@ export async function loadHeaderFooter() {
 
   if (headerElement) {
     renderWithTemplate(headerTemplate, headerElement);
+    updateCartBadge();
   }
 
   if (footerElement) {
     renderWithTemplate(footerTemplate, footerElement);
+  }
+}
+
+export function updateCartBadge() {
+  const cartItems = getLocalStorage('so-cart') || [];
+  const cartBadge = document.getElementById('cart-count');
+  if (cartBadge) {
+    cartBadge.textContent = cartItems.length > 0 ? cartItems.length : '';
   }
 }

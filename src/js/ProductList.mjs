@@ -4,18 +4,36 @@ function productCardTemplate(product) {
   const brandName = product.Brand?.Name || '';
   const productName = product.NameWithoutBrand || product.Name || '';
   const imageSrc = product.Images?.PrimaryMedium || product.Image || '';
-  const price =
-    typeof product.FinalPrice === 'number'
-      ? `$${product.FinalPrice.toFixed(2)}`
+  const finalPrice =
+    typeof product.FinalPrice === 'number' ? product.FinalPrice : null;
+  const suggestedPrice =
+    typeof product.SuggestedRetailPrice === 'number'
+      ? product.SuggestedRetailPrice
+      : null;
+  const isDiscounted =
+    finalPrice !== null &&
+    suggestedPrice !== null &&
+    finalPrice < suggestedPrice;
+
+  const discountBadge = isDiscounted
+    ? `<span class="product-card__discount">Discount</span>`
+    : '';
+  const suggestedPriceLine =
+    isDiscounted
+      ? `<p class="product-card__suggested">$${suggestedPrice.toFixed(2)}</p>`
       : '';
+  const price =
+    finalPrice !== null ? `$${finalPrice.toFixed(2)}` : '';
   const productId = product.Id || '';
 
-  return `<li class="product-card">
+  return `<li class="product-card${isDiscounted ? ' product-card--discounted' : ''}">
     <a href="/product_pages/index.html?product=${productId}">
+      ${discountBadge}
       <img src="${imageSrc}" alt="Image of ${brandName} ${productName}" />
       <h3 class="card__brand">${brandName}</h3>
       <h2 class="card__name">${productName}</h2>
       <p class="product-card__price">${price}</p>
+      ${suggestedPriceLine}
     </a>
   </li>`;
 }

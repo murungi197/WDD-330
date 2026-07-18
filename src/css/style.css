@@ -131,6 +131,27 @@ button {
   fill: gray;
 }
 
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--tertiary-color);
+  color: white;
+  font-size: 0.65em;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.cart-badge:empty {
+  display: none;
+}
+
 /* End cart icon styles */
 
 .mission {
@@ -237,6 +258,30 @@ button {
 
 .card__name {
   font-size: 1em;
+}
+
+.product-card {
+  position: relative;
+}
+
+.product-card__discount {
+  position: absolute;
+  top: 0.5em;
+  left: 0.5em;
+  z-index: 1;
+  background-color: var(--tertiary-color);
+  color: white;
+  font-size: var(--small-font);
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  border-radius: 0.25rem;
+}
+
+.product-card__suggested {
+  margin: 0.25em 0;
+  font-size: var(--small-font);
+  color: var(--dark-grey);
+  text-decoration: line-through;
 }
 
 /* End product list card */
