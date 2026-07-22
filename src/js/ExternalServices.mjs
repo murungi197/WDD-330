@@ -27,7 +27,7 @@ async function loadFromLocal(category) {
   return normalizeLocalData(data);
 }
 
-export default class ProductData {
+export default class ExternalServices {
   constructor() {}
 
   async getData(category) {
@@ -62,5 +62,20 @@ export default class ProductData {
       }
       return null;
     }
+  }
+
+  async checkout(orderData) {
+    const url = `${baseURL}checkout`;
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(orderData),
+    };
+
+    const response = await fetch(url, options);
+    const data = await convertToJson(response);
+    return data;
   }
 }
