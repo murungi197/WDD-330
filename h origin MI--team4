@@ -1,0 +1,117 @@
+[33mcommit 137feb43a5c1747c1a175bb6cd8367291c886c8a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mMI--team4[m[33m, [m[1;32mMI--individual3[m[33m)[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Wed Jul 22 11:00:52 2026 +0100
+
+    Refactor ProductData to ExternalServices and add checkout method
+
+[33mcommit 2bbbd6e7f3c3932b3bc3958b8906c9c33a82da68[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Wed Jul 22 10:55:29 2026 +0100
+
+    Add checkout form, cart totals, and CheckoutProcess module
+
+[33mcommit 2ee8ca8f6ed9721bac0c5a174b66334f737fdb4e[m[33m ([m[1;31morigin/MI--individual3[m[33m)[m
+Merge: 9026421 c751a8d
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Tue Jul 21 10:18:37 2026 +0100
+
+    Merge branch 'MI--individual3' of https://github.com/murungi197/WDD-330 into MI--individual3
+
+[33mcommit 90264211a9505215607922ea5af045554a3e0143[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Tue Jul 21 10:18:20 2026 +0100
+
+    cart
+
+[33mcommit c751a8d7b4c6e20133e4754533c70602567ca4c8[m
+Merge: 43a6b5c a1b564a
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Mon Jul 20 21:45:34 2026 +0100
+
+    Merge pull request #5 from murungi197/main
+    
+    Merge pull request #4 from murungi197/MI--individual3
+
+[33mcommit a1b564a7d4dfadcef3143736e41bb6e976c8d4ab[m
+Merge: 5054cc5 43a6b5c
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Sat Jul 18 16:05:48 2026 +0100
+
+    Merge pull request #4 from murungi197/MI--individual3
+    
+    Mi  individual3
+
+[33mcommit 43a6b5c2db4dadb97fe06106460368ae96df98e8[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Sat Jul 18 16:04:30 2026 +0100
+
+    remove from cart
+
+[33mcommit 25d8a92d790a6c5b81f2b5bef36211b7a6901d4e[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Sat Jul 18 15:52:35 2026 +0100
+
+    week3 individual
+
+[33mcommit f7084bf391c682e71b69553d894c2b117e96d35a[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Fri Jul 17 20:39:32 2026 +0100
+
+    MI--individual3
+
+[33mcommit 2e10b9a4b3b9c754b8b3524d1f85d240b7246cf7[m[33m ([m[1;31morigin/MI--team3[m[33m, [m[1;32mMI--team3[m[33m)[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Tue Jul 14 14:15:13 2026 +0100
+
+    WEEK3 TEAMS
+
+[33mcommit 5054cc5ba0f42461bbb75e30f60d3527eb0ea215[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 70840be 2c831df
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Fri Jul 10 01:23:07 2026 +0100
+
+    Merge pull request #3 from murungi197/MI--individual2
+    
+    Add PR_NOTE to force visible diff for PR
+
+[33mcommit 2c831df6f0b6e742328551e63717ebcafaa0abae[m[33m ([m[1;31morigin/MI--individual2[m[33m, [m[1;32mMI--individual2[m[33m)[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Fri Jul 10 01:14:33 2026 +0100
+
+    Add PR_NOTE to force visible diff for PR
+
+[33mcommit 70840bef4fb64ab327779f67f5e4173ebf2043cf[m
+Merge: 9d484e1 db9860d
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Fri Jul 10 00:13:35 2026 +0100
+
+    Merge pull request #2 from murungi197/MI--individual2
+    
+    week 2 individual
+
+[33mcommit db9860d2bfc5997b492f4c4627833aa9e63e6d5f[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Fri Jul 10 00:10:46 2026 +0100
+
+    week 2 individual
+
+[33mcommit 9d484e13e20fa60cff58b08a7135447740c0e4ab[m
+Merge: ce9141b b2c1d68
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Tue Jul 7 14:39:21 2026 +0100
+
+    Merge pull request #1 from murungi197/driverinitials--team2
+    
+    week two team 12
+
+[33mcommit b2c1d6894f1548559431798c72724717a29fa74b[m[33m ([m[1;31morigin/driverinitials--team2[m[33m, [m[1;31morigin/MI--team12[m[33m, [m[1;32mdriverinitials--team2[m[33m, [m[1;32mMI--team12[m[33m)[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Tue Jul 7 12:38:52 2026 +0100
+
+    week two team
+
+[33mcommit ce9141bff466c152ca15979a8fea205eb80a29fc[m
+Author: murungi197 <murungiinnocent197@gmail.com>
+Date:   Mon Jun 29 15:19:04 2026 +0100
+
+    Initial commit
