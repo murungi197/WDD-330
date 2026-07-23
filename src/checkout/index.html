@@ -53,7 +53,7 @@
                 </div>
                 <div class="checkout__field">
                   <label for="zip">Zip Code</label>
-                  <input type="text" id="zip" name="zip" required />
+                   <input type="text" id="zip" name="zip" pattern="[0-9]{5}" title="5-digit zip code" required />
                 </div>
               </div>
             </div>
@@ -63,17 +63,17 @@
               <div class="checkout__row">
                 <div class="checkout__field" style="grid-column: 1 / -1;">
                   <label for="cardNumber">Credit Card Number</label>
-                  <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" required />
+                   <input type="text" id="cardNumber" name="cardNumber" inputmode="numeric" pattern="[0-9\s]{13,19}" title="13 to 19 digit card number" required />
                 </div>
               </div>
               <div class="checkout__row">
                 <div class="checkout__field">
                   <label for="expiration">Expiration Date</label>
-                  <input type="text" id="expiration" name="expiration" placeholder="MM/YY" required />
+                   <input type="text" id="expiration" name="expiration" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/\d{2}" title="Expiration date in MM/YY format" required />
                 </div>
                 <div class="checkout__field">
                   <label for="code">Security Code</label>
-                  <input type="text" id="code" name="code" inputmode="numeric" required />
+                   <input type="text" id="code" name="code" inputmode="numeric" pattern="[0-9]{3,4}" title="3 or 4 digit security code" required />
                 </div>
               </div>
             </div>
