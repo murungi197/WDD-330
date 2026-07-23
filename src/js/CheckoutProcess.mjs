@@ -1,3 +1,5 @@
+import { alertMessage } from './utils.mjs';
+
 export default class CheckoutProcess {
   constructor(dataSource) {
     this.dataSource = dataSource;
@@ -113,10 +115,12 @@ export default class CheckoutProcess {
 
     try {
       const response = await this.dataSource.checkout(order);
+      localStorage.removeItem('so-cart');
+      window.location.href = 'success.html';
       return response;
     } catch (error) {
-      console.error('Checkout failed:', error);
-      throw error;
+      const message = typeof error?.message === 'string' ? error.message : 'There was a problem processing your order. Please try again.';
+      alertMessage(message);
     }
   }
 }

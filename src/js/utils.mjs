@@ -92,3 +92,22 @@ export function updateCartBadge() {
     cartBadge.textContent = cartItems.length > 0 ? cartItems.length : '';
   }
 }
+
+export function alertMessage(message, scroll = true) {
+  const alert = document.createElement('div');
+  alert.classList.add('alert');
+  alert.innerHTML = `<span>${message}</span><span class="alert__close">&times;</span>`;
+
+  alert.addEventListener('click', function(e) {
+    if (e.target.classList.contains('alert__close')) {
+      main.removeChild(this);
+    }
+  });
+
+  const main = document.querySelector('main');
+  main.prepend(alert);
+
+  if (scroll) {
+    window.scrollTo(0, 0);
+  }
+}

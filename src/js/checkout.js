@@ -30,16 +30,9 @@ if (form) {
     submitButton.disabled = true;
     submitButton.textContent = 'Processing...';
 
-    try {
-      const response = await checkoutProcess.checkout(form);
-      alert('Order placed successfully!');
-      console.log('Server response:', response);
-    } catch (error) {
-      alert('There was a problem processing your order. Please try again.');
-      console.error(error);
-    } finally {
-      submitButton.disabled = false;
-      submitButton.textContent = 'Place Order';
-    }
+    await checkoutProcess.checkout(form);
+
+    submitButton.disabled = false;
+    submitButton.textContent = 'Place Order';
   });
 }
